@@ -119,4 +119,53 @@ void main(List<String> arguments) {
   semuaOperator();
   // TUGAS SEMUA OPERATOR
 
+  // TANTANGAN TAMBAHAN
+  print('=== APLIKASI KONVERSI ===');
+  print('1. Panjang');
+  print('2. Massa');
+  print('3. Volume');
+  print('4. Suhu');
+
+  stdout.write('Pilih: ');
+  String? pilih = stdin.readLineSync();
+
+  stdout.write('Masukkan nilai: ');
+  double nilai = double.parse(stdin.readLineSync()!);
+
+  // Validasi negatif untuk massa & volume
+  if ((pilih == '2' || pilih == '3') && nilai < 0) {
+    print('Tidak boleh negatif!');
+    return;
+  }
+
+  stdout.write('Dari unit: ');
+  String dari = stdin.readLineSync()!;
+
+  stdout.write('Ke unit: ');
+  String ke = stdin.readLineSync()!;
+
+  double hasil;
+
+  switch (pilih) {
+    case '1':
+      hasil = konversiPanjang(nilai, dari, ke);
+      break;
+    case '2':
+      hasil = konversiMassa(nilai, dari, ke);
+      break;
+    case '3':
+      hasil = konversiVolume(nilai, dari, ke);
+      break;
+    case '4':
+      hasil = konversiSuhu(nilai, dari, ke);
+      break;
+    default:
+      print('Pilihan salah');
+      return;
+  }
+
+  print('\nHasil: ${hasil.toStringAsFixed(4)}');
+// TANTANGAN TAMBAHAN
+
+
 }

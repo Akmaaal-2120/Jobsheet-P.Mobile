@@ -93,3 +93,77 @@ void semuaOperator(){
   print('Kondisional: Angka $a adalah $angka');
 }
 // TUGAS SEMUA OPERATOR
+
+// TANTANGAN TAMBAHAN
+
+double konversiPanjang(double nilai, String dari, String ke) {
+  Map<String, double> panjang = {
+    'mm': 0.001,
+    'cm': 0.01,
+    'm': 1,
+    'km': 1000,
+    'inch': 0.0254,
+  };
+
+  double keMeter = nilai * panjang[dari]!;   // ubah ke meter
+  return keMeter / panjang[ke]!;             // ubah ke satuan tujuan
+}
+
+double konversiMassa(double nilai, String dari, String ke) {
+  Map<String, double> massa = {
+    'mg': 0.000001,
+    'g': 0.001,
+    'kg': 1,
+    'ton': 1000,
+    'lb': 0.453592,
+  };
+
+  double keKg = nilai * massa[dari]!;   // ubah ke kilogram
+  return keKg / massa[ke]!;             // ubah ke satuan tujuan
+}
+
+double konversiVolume(double nilai, String dari, String ke) {
+  Map<String, double> volume = {
+    'mL': 0.001,
+    'L': 1,
+    'm3': 1000,
+    'galon': 3.785,
+    'cup': 0.24,
+  };
+
+  double keLiter = nilai * volume[dari]!;  // ubah ke liter
+  return keLiter / volume[ke]!;            // ubah ke satuan tujuan
+}
+
+double konversiSuhu(double nilai, String dari, String ke) {
+  double celsius;
+
+  // Ubah ke Celsius
+  switch (dari.toUpperCase()) {
+    case 'C':
+      celsius = nilai;
+      break;
+    case 'F':
+      celsius = (nilai - 32) * 5 / 9;
+      break;
+    case 'K':
+      celsius = nilai - 273.15;
+      break;
+    default:
+      throw Exception('Unit tidak valid');
+  }
+
+  // Dari Celsius ke satuan tujuan
+  switch (ke.toUpperCase()) {
+    case 'C':
+      return celsius;
+    case 'F':
+      return celsius * 9 / 5 + 32;
+    case 'K':
+      return celsius + 273.15;
+    default:
+      throw Exception('Unit tidak valid');
+  }
+}
+// TANTANGAN TAMBAHAN
+
