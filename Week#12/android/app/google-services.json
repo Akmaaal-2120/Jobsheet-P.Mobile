@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "736683359015",
+    "project_id": "flutter-login-2e420",
+    "storage_bucket": "flutter-login-2e420.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736683359015:android:a0817bc428a566a33d4702",
+        "android_client_info": {
+          "package_name": "com.example.weather_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAz7HLpINgc08-B3zMF9DwHstAhE7TTus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
